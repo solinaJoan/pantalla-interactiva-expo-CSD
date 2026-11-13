@@ -1,0 +1,421 @@
+:root {
+    --t: #08aeb3;
+    --b: #050505;
+    --w: #fff;
+    --g: #efc94c
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--b);
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent
+}
+
+.view {
+    display: none;
+    width: 100vw;
+    height: 100vh
+}
+
+.view.active {
+    display: grid
+}
+
+.index {
+    grid-template-rows: 15% 78% 7%
+}
+
+.mast {
+    display: flex;
+    align-items: center;
+    padding: 0 48px
+}
+
+.mast h1 {
+    margin: 0;
+    color: var(--t);
+    font-size: clamp(42px, 4.2vw, 80px);
+    text-transform: uppercase
+}
+
+.cols {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.cat {
+    position: relative;
+    overflow: hidden;
+    border: 0;
+    border-right: 2px solid #333;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer
+}
+
+.cat:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .08), rgba(0, 0, 0, .15) 42%, rgba(0, 0, 0, .84))
+}
+
+.cat.tfg:before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, .65), rgba(0, 0, 0, .2) 38%, rgba(0, 0, 0, .5))
+}
+
+.copy {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 3px 16px #000
+}
+
+.copy.bottom {
+    bottom: 162px
+}
+
+.copy.top {
+    top: 36px
+}
+
+.copy strong {
+    display: block;
+    font-size: clamp(50px, 4vw, 78px);
+    line-height: .95
+}
+
+.tfg .copy strong {
+    font-size: clamp(45px, 3.45vw, 66px)
+}
+
+.copy small {
+    display: block;
+    margin-top: 14px;
+    font-size: 15px
+}
+
+.circle {
+    position: absolute;
+    left: 50%;
+    bottom: 42px;
+    transform: translateX(-50%);
+    width: 96px;
+    height: 96px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 66px;
+    padding-bottom: 10px;
+    background: rgba(0, 0, 0, .2)
+}
+
+.cat:focus-visible,
+.cat:active {
+    outline: 8px solid var(--t);
+    outline-offset: -8px
+}
+
+.foot {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 0 42px;
+    border-top: 1px solid #555;
+    color: var(--t);
+    text-transform: uppercase;
+    font-size: 14px
+}
+
+.foot strong {
+    text-align: right
+}
+
+.catalog {
+    grid-template-rows: 112px 1fr
+}
+
+.topbar {
+    display: grid;
+    grid-template-columns: 210px 1fr 210px;
+    align-items: center;
+    padding: 0 32px;
+    border-bottom: 1px solid #333
+}
+
+.topbar h1 {
+    text-align: center;
+    color: var(--t);
+    font-size: 42px;
+    text-transform: uppercase
+}
+
+.touch {
+    min-height: 68px;
+    border: 2px solid #888;
+    border-radius: 999px;
+    background: #111;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+    padding: 0 24px;
+    cursor: pointer
+}
+
+.body {
+    display: grid;
+    grid-template-columns: 34% 66%;
+    min-height: 0
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 42px;
+    background-size: cover;
+    background-position: center
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .85))
+}
+
+.hero>div {
+    position: relative
+}
+
+.hero h2 {
+    font-size: 58px;
+    text-transform: uppercase;
+    margin: 0 0 12px
+}
+
+.cards {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+    align-content: start;
+    overflow-y: auto;
+    overscroll-behavior: contain
+}
+
+.card {
+    min-height: 290px;
+    border: 1px solid #555;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #151515;
+    color: #fff;
+    text-align: left;
+    padding: 0;
+    cursor: pointer
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover
+}
+
+.card div {
+    padding: 18px
+}
+
+.card strong {
+    display: block;
+    font-size: 26px
+}
+
+.card small {
+    display: block;
+    color: #ccc;
+    margin-top: 7px
+}
+
+.badge {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: var(--g);
+    color: #111;
+    font-weight: 800
+}
+
+.player {
+    grid-template-rows: 112px 1fr 126px
+}
+
+.stage {
+    position: relative;
+    display: grid;
+    place-items: center;
+    background-size: cover;
+    background-position: center
+}
+
+.stage:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .55)
+}
+
+.play {
+    position: relative;
+    width: 116px;
+    height: 116px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    background: var(--t);
+    font-size: 48px
+}
+
+.caption {
+    position: absolute;
+    left: 42px;
+    bottom: 34px
+}
+
+.caption h2 {
+    font-size: 42px;
+    margin: 0
+}
+
+.pending {
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    background: var(--g);
+    color: #111;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 800
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 0 32px
+}
+
+.progress {
+    flex: 1;
+    height: 9px;
+    background: #555;
+    border-radius: 9px
+}
+
+@media(max-width:1100px) {
+    .copy strong {
+        font-size: 46px
+    }
+
+    .cards {
+        padding: 18px;
+        gap: 18px
+    }
+
+    .topbar h1 {
+        font-size: 34px
+    }
+}
+
+.video-view {
+    position: relative;
+    background: #000;
+    grid-template-rows: 1fr !important
+}
+
+.video-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background: #000
+}
+
+.video-native {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #000
+}
+
+.video-back {
+    position: absolute;
+    z-index: 20;
+    top: 24px;
+    left: 24px;
+    min-width: 150px;
+    min-height: 72px;
+    padding: 0 24px;
+    border: 2px solid rgba(255, 255, 255, .9);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, .76);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    backdrop-filter: blur(8px)
+}
+
+.video-back:focus-visible,
+.video-back:active {
+    outline: 7px solid var(--t);
+    outline-offset: 3px
+}
+
+.video-message {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 80px;
+    background: #070707
+}
+
+.video-message[hidden] {
+    display: none
+}
+
+.video-message div {
+    max-width: 760px
+}
+
+.video-message h2 {
+    font-size: 44px;
+    margin: 0 0 18px
+}
+
+.video-message p {
+    font-size: 21px;
+    line-height: 1.45;
+    color: #ccc
+}
